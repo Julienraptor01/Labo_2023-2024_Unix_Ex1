@@ -41,7 +41,7 @@ OBJECTS=$(MAIN_OBJ)/moc_mainwindow.o $(MAIN_OBJ)/mainwindow.o $(MAIN_OBJ)/main.o
 # compile arguments
 SRC_DEBUG_LINKER=-Xlinker --verbose
 SRC_COMPILE_ARGS=-I $(MAIN_SRC) -Wall -Wextra
-SRC_COMPILE_ADD_ARGS=-pipe -fPIC -std=gnu++11 -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I$(SHARED_OBJECTS)/qt5/mkspecs/linux-g++ -isystem $(QT5_HEADERS) -isystem $(QT5_HEADERS)/QtWidgets -isystem $(QT5_HEADERS)/QtGui -isystem $(QT5_HEADERS)/QtCore
+SRC_COMPILE_ADD_ARGS=-pipe -fPIC -std=gnu++11 -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I$(QT5_HEADERS)/mkspecs/linux-g++ -isystem $(QT5_HEADERS) -isystem $(QT5_HEADERS)/QtWidgets -isystem $(QT5_HEADERS)/QtGui -isystem $(QT5_HEADERS)/QtCore
 SRC_COMPILE_LINKER_ARGS=-lpthread -lQt5Widgets -lQt5Gui -lQt5Core -lGL
 # compilation
 COMPILE=g++
