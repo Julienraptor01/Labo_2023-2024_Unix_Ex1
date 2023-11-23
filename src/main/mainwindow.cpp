@@ -20,17 +20,13 @@ ELEMENT Elm[] =
 		{0, "", ""}
 	};
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	static int currentElement = 1;
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
 	ui->setupUi(this);
-
-	//***** A modifier ***********************
-	setNom(Elm[1].nom);
-	setEmail(Elm[1].email);
-	//****************************************
+	setNom(Elm[currentElement].nom);
+	setEmail(Elm[currentElement].email);
 }
 
 MainWindow::~MainWindow()
@@ -38,9 +34,6 @@ MainWindow::~MainWindow()
 	delete ui;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///// Fonctions utiles : ne pas modifier /////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MainWindow::setNom(const char *Text)
 {
 	fprintf(stderr, "---%s---\n", Text);
@@ -63,23 +56,28 @@ void MainWindow::setEmail(const char *Text)
 	ui->lineEditEmail->setText(Text);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///// Fonctions clics sur les boutons ////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MainWindow::on_pushButtonSuivant_clicked()
 {
 	fprintf(stderr, "Clic sur le bouton >>>\n");
-	// TO DO
+	if (Elm[currentElement + 1].id == 0)
+		return;
+	currentElement++;
+	setNom(Elm[currentElement].nom);
+	setEmail(Elm[currentElement].email);
 }
 
 void MainWindow::on_pushButtonPrecedent_clicked()
 {
 	fprintf(stderr, "Clic sur le bouton <<<\n");
-	// TO DO
+	if (Elm[currentElement - 1].id == 0)
+		return;
+	currentElement--;
+	setNom(Elm[currentElement].nom);
+	setEmail(Elm[currentElement].email);
 }
 
 void MainWindow::on_pushButtonQuitter_clicked()
 {
 	fprintf(stderr, "Clic sur le bouton Quitter\n");
-	// TO DO
+	exit(0);
 }

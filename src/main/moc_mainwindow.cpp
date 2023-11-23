@@ -25,9 +25,8 @@ struct qt_meta_stringdata_MainWindow_t
 	QByteArrayData data[5];
 	char stringdata0[101];
 };
-#define QT_MOC_LITERAL(idx, ofs, len)                            \
-	Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-															qptrdiff(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs - idx * sizeof(QByteArrayData)))
+#define QT_MOC_LITERAL(idx, ofs, len) \
+	Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, qptrdiff(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs - idx * sizeof(QByteArrayData)))
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 	{
 		QT_MOC_LITERAL(0, 0, 10),  // "MainWindow"
@@ -91,12 +90,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
 	Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject MainWindow::staticMetaObject = {{&QMainWindow::staticMetaObject,
-																	  qt_meta_stringdata_MainWindow.data,
-																	  qt_meta_data_MainWindow,
-																	  qt_static_metacall,
-																	  nullptr,
-																	  nullptr}};
+QT_INIT_METAOBJECT const QMetaObject MainWindow::staticMetaObject = {{&QMainWindow::staticMetaObject, qt_meta_stringdata_MainWindow.data, qt_meta_data_MainWindow, qt_static_metacall, nullptr, nullptr}};
 
 const QMetaObject *MainWindow::metaObject() const
 {
