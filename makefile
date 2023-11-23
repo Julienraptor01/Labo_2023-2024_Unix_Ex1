@@ -89,7 +89,7 @@ setup:
 	mkdir \
 	-p \
 	$(MAIN_OBJ) \
-	$(MAIN_BIN) \
+	$(MAIN_BIN)
 	$(LOG) '\n\033[44mmake setup finished\033[49m\n\n'
 
 clean:
